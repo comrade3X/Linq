@@ -1,1 +1,2 @@
 c:\users\kidba\documents\visual studio 2015\Projects\Linq\Linq\bin\Debug\Linq.exe.config
+C:\Users\kidba\OneDrive\Documents\Visual Studio 2015\Projects\Linq.git\trunk\Linq\Linq\bin\Debug\Linq.exe.config
