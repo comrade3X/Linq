@@ -19,6 +19,11 @@ namespace Linq.Operation
                 new Student { Name = "Dung3", Age = 20 },
                 new Student { Name = "Dung4", Age = 20 },
             };
+            var listInformation = new List<Information>
+            {
+                new Information {Students=listObj,Id=1 }
+            };
+
             #endregion
 
             #region Intro
@@ -127,11 +132,43 @@ namespace Linq.Operation
             */
             #endregion
 
-
             #region First and FirstOrDefault
+            // tra ve phan tu dau tien trong danh sach. neu phan tu ko co gia tri se loi
+            /*
             var obj = listObj.First();
+
             var list = new List<int>();
-            Console.Write(obj.Name+" "+ obj.Age);
+            Console.Write(listObj.FirstOrDefault().Name);
+            */
+            #endregion
+
+            #region Last and LastOrDetault
+            //tuong tu nhu First
+            #endregion
+
+            #region Single and SingleOrDefault
+            //tra ve 1 doi tuong voi 1 dieu kien nao do
+            /*
+            var item = listInt.Single(x => x < 2);
+
+            Console.WriteLine(item);
+
+            //tra ve gia tri 0 neu khong tim duoc phan tu nao thich hop trong Collection
+            var itemDefault = listInt.SingleOrDefault(x => x>11);
+            Console.WriteLine(itemDefault);
+            */
+            #endregion
+
+            #region SelectMany
+            //tra ve list cua list
+            IEnumerable<Information> infor = new List<Information>();
+            IEnumerable<IEnumerable<Student>> list = infor.Select(x => x.Students);
+            IEnumerable<Student> stud = infor.SelectMany(x => x.Students);
+            var linq = infor.SelectMany(x => x.Students, (obj1, obj2) => new { obj1.Id, obj2.Name });
+            foreach (var item in linq)
+            {
+                Console.WriteLine(item.Name + "--" + item.Id);
+            }
             #endregion
 
             Console.ReadKey();

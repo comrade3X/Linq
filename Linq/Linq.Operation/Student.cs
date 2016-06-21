@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 
 namespace Linq.Operation
 {
-    class Student
+    public class Student
     {
         public virtual string Name { get; set; }
-        public virtual int Age { get; set; }       
+        public virtual int Age { get; set; }
+    }
+
+    public class Information
+    {
+        public virtual IEnumerable<Student> Students { get; set; }
+        public virtual int Id { get; set; }
     }
 }
